@@ -5,7 +5,15 @@ uppercaseAlphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
 lowercaseAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', '\\', ':', ';', '"', '\'', '<', '>', ',', '.', '?', '/']
 choice = [numbers, uppercaseAlphabet, lowercaseAlphabet, specialCharacters]
-def generatePassword(length):
+def generatePassword(length, hasNumbers, hasUppercase, hasLowercase, hasSpecialCharacters):
+    if hasNumbers == False:
+        choice.remove(numbers)
+    if hasUppercase == False:
+        choice.remove(uppercaseAlphabet)
+    if hasLowercase == False:
+        choice.remove(lowercaseAlphabet)
+    if hasSpecialCharacters == False:
+        choice.remove(specialCharacters)
     password = []
     for i in range(length):
         arr = random.choice(choice)
@@ -13,4 +21,4 @@ def generatePassword(length):
     random.shuffle(password)
     return ''.join(password)
 
-print(generatePassword(12))
+print(generatePassword(12, True, False, True, False))
