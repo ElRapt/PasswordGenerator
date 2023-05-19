@@ -8,10 +8,8 @@ choice = [numbers, uppercaseAlphabet, lowercaseAlphabet, specialCharacters]
 def generatePassword(length):
     password = []
     for i in range(length):
-        password.append(str(random.choice(numbers)))
-        password.append(random.choice(uppercaseAlphabet))
-        password.append(random.choice(lowercaseAlphabet))
-        password.append(random.choice(specialCharacters))
+        arr = random.choice(choice)
+        password.append(random.choice(arr))
     random.shuffle(password)
     return ''.join(password)
 
