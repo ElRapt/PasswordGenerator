@@ -34,8 +34,14 @@ def generatePassword(length, hasNumbers, hasUppercase, hasLowercase, hasSpecialC
     if not hasSpecialCharacters:
         choice.remove(specialCharacters)
     
+    
     if not choice:
-        return "Impossible de générer un mot de passe avec les critères sélectionnés."
+        msgbox.showerror("Error", "Cannot generate password with no criteria selected.")
+        return "", 0
+
+    if desiredComplexity > len(choice):
+        msgbox.showerror("Error", "Complexity is too high for the selected criteria.")
+        return "", 0
     
     while True:
         password = []
@@ -52,17 +58,30 @@ def generatePassword(length, hasNumbers, hasUppercase, hasLowercase, hasSpecialC
             return password, complexityScore
     
 def generate_password_button_click():
+    length_value = length_entry.get()
+    
+    if not length_value or int(length_value) == 0:
+        msgbox.showerror("Error", "Password length must be superior to 0.")
+        return
+    
     length = int(length_entry.get())
     has_numbers = numbers_var.get()
     has_uppercase = uppercase_var.get()
     has_lowercase = lowercase_var.get()
     has_special_characters = special_characters_var.get()
-    desired_complexity = complexities.index(complexity_var.get()) + 1
-    
+    complexity_value = complexity_var.get()
+
+    if not complexity_value:
+        msgbox.showerror("Error", "Please select a complexity.")
+        return
+
+    desired_complexity = complexities.index(complexity_value) + 1
+
     password, complexity = generatePassword(length, has_numbers, has_uppercase, has_lowercase, has_special_characters, desired_complexity)
-    
+
     password_output_label.config(text="Password : " + password)
     complexity_output_label.config(text="Complexity : " + complexities[complexity - 1])
+
 
 def copy_to_clipboard():
     password = password_output_label.cget("text")[12:] 
