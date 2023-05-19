@@ -87,7 +87,7 @@ def copy_to_clipboard():
     password = password_output_label.cget("text")[12:] 
     window.clipboard_clear()  
     window.clipboard_append(password)  
-    msgbox.showinfo("Copied !", "Password was copied to clipboard.")
+    msgbox.showinfo("Copied", "Password was copied to clipboard.")
 
 
 # Création de la fenêtre principale
