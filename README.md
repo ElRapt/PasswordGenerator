@@ -22,11 +22,11 @@ The Password Generator is a Python application that allows users to generate ran
 ## Installation
 1. Clone the repository:
 
-```git clone https://github.com/ElRapt/PasswordGenerator.git```
+- ```git clone https://github.com/ElRapt/PasswordGenerator.git```
 
 2. Navigate to the project directory:
 
-```cd password-generator```
+- ```cd password-generator```
 
 3. Install the required dependencies:
 
@@ -35,7 +35,7 @@ The Password Generator is a Python application that allows users to generate ran
 ## Usage
 1. Run the application:
 
-```python generator.py```
+- ```python generator.py```
 
 2. Specify the desired password length and select the character types to include.
 3. Choose the desired complexity level from the dropdown menu.
