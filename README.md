@@ -30,7 +30,7 @@ The Password Generator is a Python application that allows users to generate ran
 
 3. Install the required dependencies:
 
-```pip install -r requirements.txt```
+- Random and tkinter
 
 ## Usage
 1. Run the application:
