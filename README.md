@@ -7,8 +7,6 @@ A simple password generator built with Python and Tkinter.
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
