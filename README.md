@@ -22,7 +22,7 @@ The Password Generator is a Python application that allows users to generate ran
 ## Installation
 1. Clone the repository:
 
-```git clone https://github.com/your-username/password-generator.git```
+```[git clone https://github.com/your-username/password-generator.git](https://github.com/ElRapt/PasswordGenerator.git)```
 
 2. Navigate to the project directory:
 
