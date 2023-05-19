@@ -6,14 +6,16 @@ lowercaseAlphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
 specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', '{', '}', '[', ']', '|', '\\', ':', ';', '"', '\'', '<', '>', ',', '.', '?', '/']
 choice = [numbers, uppercaseAlphabet, lowercaseAlphabet, specialCharacters]
 def generatePassword(length, hasNumbers, hasUppercase, hasLowercase, hasSpecialCharacters):
-    if hasNumbers == False:
+    if not hasNumbers:
         choice.remove(numbers)
-    if hasUppercase == False:
+    if not hasUppercase:
         choice.remove(uppercaseAlphabet)
-    if hasLowercase == False:
+    if not hasLowercase:
         choice.remove(lowercaseAlphabet)
-    if hasSpecialCharacters == False:
+    if not hasSpecialCharacters:
         choice.remove(specialCharacters)
+    if not choice:  
+        return "Can't generate a password with no characters."
     password = []
     for i in range(length):
         arr = random.choice(choice)
