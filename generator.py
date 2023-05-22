@@ -39,7 +39,7 @@ def generatePassword(length, hasNumbers, hasUppercase, hasLowercase, hasSpecialC
         msgbox.showerror("Error", "Cannot generate password with no criteria selected.")
         return "", 0
 
-    if desiredComplexity > len(choice):
+    if desiredComplexity > len(choice)+1:
         msgbox.showerror("Error", "Complexity is too high for the selected criteria.")
         return "", 0
     
